@@ -4,7 +4,7 @@ import Result from "../result/result";
 export default function Search() {
 	let [city, setCity] = useState<string>("");
 	let [displayResult, setDisplayResult] = useState<boolean>(false);
-	let [data, setData ] = useState<any>(null)
+	let [data, setData] = useState<any>(null)
 
 	async function onSubmit(e: any) {
 		e.preventDefault();
@@ -19,22 +19,23 @@ export default function Search() {
 	return (
 		<>
 			{displayResult ? <Result data={data} /> :
-			(<form onSubmit={onSubmit}>
-				<label htmlFor="city">
+				(<form className="w-full max-w-xl flex mx-auto p-20 text-xl" onSubmit={onSubmit}>
+
 					<input
 						onChange={(e) => setCity(e.target.value)}
 						value={city}
+						className="w-full placeholder-gray-400 text-gray-900 p-4"
 						type="text"
 						name="city"
 						id="city"
 						placeholder="City Name"
 						required
 					/>
-				</label>
-				<button type="submit">🔍</button>
-			</form>)
+
+					<button className="bg-white p-4" type="submit">🔍</button>
+				</form>)
 			}
-			
+
 		</>
 	);
 }
