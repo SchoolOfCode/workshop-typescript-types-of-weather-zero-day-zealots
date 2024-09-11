@@ -3,13 +3,12 @@ import ResultForecast from "./result_forecast/result_forecast"
 
 
 export default function Result(props: any) {
-	const { data } = props;
+    const { data } = props;
 
 
-	return (
+    return (
         <>
-            <h2>Result</h2>
-            <ResultForecast data={data}/>
+            <ResultForecast data={data} />
         </>
     )
 }

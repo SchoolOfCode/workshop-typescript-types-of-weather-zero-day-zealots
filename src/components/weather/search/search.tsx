@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Result from "../result/result";
+import styles from './search.module.css'
 
 export default function Search() {
 	let [city, setCity] = useState<string>("");
@@ -24,7 +25,7 @@ export default function Search() {
 					<input
 						onChange={(e) => setCity(e.target.value)}
 						value={city}
-						className="w-full placeholder-gray-400 text-gray-900 p-4"
+						className={`${styles.input} w-full placeholder-gray-400 text-gray-900 p-4`}
 						type="text"
 						name="city"
 						id="city"
@@ -32,7 +33,7 @@ export default function Search() {
 						required
 					/>
 
-					<button className="bg-white p-4" type="submit">🔍</button>
+					<button className={`${styles.button} p-4`} type="submit">🔍</button>
 				</form>)
 			}
 

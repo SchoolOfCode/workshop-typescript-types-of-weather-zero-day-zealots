@@ -1,0 +1,12 @@
+.input {
+    background: #ffffff;
+    border-radius: .5em;
+    box-shadow: 0px 0px 5px #00000025;
+    margin: .2em;
+}
+
+.button {
+    background: #525252;
+    border-radius: .5em;
+    margin: .2em;
+}

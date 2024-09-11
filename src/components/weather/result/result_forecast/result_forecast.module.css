@@ -1,0 +1,48 @@
+p {
+    font-size: 2rem;
+
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+.resultWrapper {
+    background: #dfe4ec;
+    border-radius: 1em;
+    box-shadow: 0 5px #00000025;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    align-items: center;
+}
+
+.tempMain {
+    display: flex;
+
+}
+
+.tempMainText {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.tempMainTitle {
+    opacity: .5;
+    font-size: .75em;
+}
+
+.tempMainValue {
+    font-size: 2.5em;
+    text-align: left;
+    font-weight: 700;
+    background: none;
+}
+
+.tempExtraText {
+    display: flex;
+    flex-direction: column;
+    opacity: .5;
+}
