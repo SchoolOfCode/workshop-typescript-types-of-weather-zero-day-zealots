@@ -2,21 +2,24 @@ import { useState } from "react";
 import Result from "../result/result";
 
 export default function Search() {
-	let [city, setCity] = useState("");
+	let [city, setCity] = useState<string>("");
+	let [displayResult, setDisplayResult] = useState<boolean>(false);
+	let [data, setData ] = useState<any>(null)
 
 	async function onSubmit(e: any) {
 		e.preventDefault();
-		let cityInput = e.target.value;
-		console.log(cityInput);
 		let resp = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f1f0b9e0659b64e4a75395bc9df2d8e7`
+			`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=f1f0b9e0659b64e4a75395bc9df2d8e7`
 		).then((res) => res.json());
+		setData(resp);
+		setDisplayResult(true)
 	}
 
-	
+
 	return (
 		<>
-			{city === "" ? (<form onSubmit={onSubmit}>
+			{displayResult ? <Result data={data} /> :
+			(<form onSubmit={onSubmit}>
 				<label htmlFor="city">
 					<input
 						onChange={(e) => setCity(e.target.value)}
@@ -29,7 +32,8 @@ export default function Search() {
 					/>
 				</label>
 				<button type="submit">🔍</button>
-			</form>): <Result />}
+			</form>)
+			}
 			
 		</>
 	);
